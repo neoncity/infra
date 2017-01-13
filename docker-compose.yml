@@ -1,0 +1,11 @@
+version: '2'
+services:
+  postgres:
+    container_name: neoncity-postgres
+    image: postgres
+    ports:
+     - 10000:5432
+    environment:
+     - POSTGRES_USER=neoncity
+     - POSTGRES_PASSWORD=neoncity
+     - POSTGRES_DB=neoncity
