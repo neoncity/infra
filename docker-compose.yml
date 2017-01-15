@@ -9,3 +9,15 @@ services:
      - POSTGRES_USER=neoncity
      - POSTGRES_PASSWORD=neoncity
      - POSTGRES_DB=neoncity
+  identity:
+    container_name: neoncity-identity
+    image: neoncity-identity
+    build:
+      context: ../identity
+    ports:
+     - 10001:10000
+    links:
+     - postgres
+    volumes:
+     - ../identity/src:/neoncity/pack/src
+     - ../identity/secrets.json:/neoncity/var/secrets.json
