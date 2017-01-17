@@ -14,6 +14,8 @@ services:
     image: neoncity-identity
     build:
       context: ../identity
+      args:
+       - NPM_CONFIG_REGISTRY
     ports:
      - 10001:10000
     links:
