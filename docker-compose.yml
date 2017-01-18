@@ -15,7 +15,8 @@ services:
     build:
       context: ../identity
       args:
-       - NPM_CONFIG_REGISTRY
+       - GEMFURY_USER
+       - GEMFURY_API_KEY
     ports:
      - 10001:10000
     links:
