@@ -24,3 +24,19 @@ services:
     volumes:
      - ../identity/src:/neoncity/pack/src
      - ../identity/secrets.json:/neoncity/var/secrets.json
+  causefe:
+    container_name: neoncity-causefe
+    image: neoncity-causefe
+    build:
+      context: ../causefe
+      args:
+       - GEMFURY_USER
+       - GEMFURY_API_KEY
+    ports:
+     - 10002:10000
+    links:
+     - postgres
+     - identity
+    volumes:
+     - ../causefe/src:/neoncity/pack/src
+     - ../causefe/secrets.json:/neoncity/var/secrets.json
