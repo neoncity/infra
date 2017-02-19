@@ -39,4 +39,5 @@ services:
      - identity
     volumes:
      - ../causefe/src:/neoncity/pack/src
+     - ../causefe/node_modules:/neoncity/pack/node_modules
      - ../causefe/secrets.json:/neoncity/var/secrets.json
