@@ -23,6 +23,7 @@ services:
      - postgres
     volumes:
      - ../identity/src:/neoncity/pack/src
+     - ../identity/node_modules:/neoncity/pack/node_modules     
      - ../identity/secrets.json:/neoncity/var/secrets.json
   causefe:
     container_name: neoncity-causefe
