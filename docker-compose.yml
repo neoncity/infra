@@ -25,6 +25,23 @@ services:
      - ../identity/src:/neoncity/pack/src
      - ../identity/node_modules:/neoncity/pack/node_modules     
      - ../identity/secrets.json:/neoncity/var/secrets.json
+  core:
+    container_name: neoncity-core
+    image: neoncity-core
+    build:
+      context: ../core
+      args:
+       - GEMFURY_USER
+       - GEMFURY_API_KEY
+    ports:
+     - 10002:10000
+    links:
+     - postgres
+     - identity
+    volumes:
+     - ../core/src:/neoncity/pack/src
+     - ../core/node_modules:/neoncity/pack/node_modules     
+     - ../core/secrets.json:/neoncity/var/secrets.json      
   causefe:
     container_name: neoncity-causefe
     image: neoncity-causefe
@@ -34,10 +51,11 @@ services:
        - GEMFURY_USER
        - GEMFURY_API_KEY
     ports:
-     - 10002:10000
+     - 10003:10000
     links:
      - postgres
      - identity
+     - core
     volumes:
      - ../causefe/src:/neoncity/pack/src
      - ../causefe/node_modules:/neoncity/pack/node_modules
