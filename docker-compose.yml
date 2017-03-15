@@ -23,6 +23,7 @@ services:
      - postgres
     volumes:
      - ../identity/src:/neoncity/pack/src
+     - ../identity/migrations:/neoncity/pack/migrations
      - ../identity/node_modules:/neoncity/pack/node_modules     
      - ../identity/secrets.json:/neoncity/var/secrets.json
   core:
@@ -40,6 +41,7 @@ services:
      - identity
     volumes:
      - ../core/src:/neoncity/pack/src
+     - ../core/migrations:/neoncity/pack/migrations     
      - ../core/node_modules:/neoncity/pack/node_modules     
      - ../core/secrets.json:/neoncity/var/secrets.json      
   causefe:
