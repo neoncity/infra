@@ -22,9 +22,9 @@ services:
     links:
      - postgres
     volumes:
-     - ../identity/src:/neoncity/pack/src
-     - ../identity/migrations:/neoncity/pack/migrations
-     - ../identity/node_modules:/neoncity/pack/node_modules     
+     - ../identity/src:/neoncity/src
+     - ../identity/migrations:/neoncity/migrations
+     - ../identity/node_modules:/neoncity/node_modules     
      - ../identity/secrets.json:/neoncity/var/secrets.json
   core:
     container_name: neoncity-core
@@ -40,9 +40,9 @@ services:
      - postgres
      - identity
     volumes:
-     - ../core/src:/neoncity/pack/src
-     - ../core/migrations:/neoncity/pack/migrations     
-     - ../core/node_modules:/neoncity/pack/node_modules     
+     - ../core/src:/neoncity/src
+     - ../core/migrations:/neoncity/migrations     
+     - ../core/node_modules:/neoncity/node_modules     
      - ../core/secrets.json:/neoncity/var/secrets.json      
   causefe:
     container_name: neoncity-causefe
@@ -59,6 +59,6 @@ services:
      - identity
      - core
     volumes:
-     - ../causefe/src:/neoncity/pack/src
-     - ../causefe/node_modules:/neoncity/pack/node_modules
+     - ../causefe/src:/neoncity/src
+     - ../causefe/node_modules:/neoncity/node_modules
      - ../causefe/secrets.json:/neoncity/var/secrets.json

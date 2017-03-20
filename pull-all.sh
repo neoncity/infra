@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull
+
 cd ..
 
 cd causefe
