@@ -62,3 +62,4 @@ services:
      - ../causefe/src:/neoncity/src
      - ../causefe/node_modules:/neoncity/node_modules
      - ../causefe/secrets.json:/neoncity/var/secrets.json
+     - ../causefe/webpack.config.js:/neoncity/webpack.config.js
